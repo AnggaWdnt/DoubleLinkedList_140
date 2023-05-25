@@ -14,7 +14,7 @@ class DoubleLinkedList {
 private:
 	Node* START;
 public:
-	DoubleLinkedList() {
+	DoubleLinkedList();
 		void addNote();
 		bool search(int rollNo, Node * *previous, Node * *current);
 		bool deleteNode(int rollNo);
@@ -25,11 +25,11 @@ public:
 		void searchData();
 };
 
-	DoubleLinkedList::DoubleLinkedList() {
+DoubleLinkedList::DoubleLinkedList() {
 		START = NULL;
-	}
+}
 
-void DoubleLinkedList::addNode() {
+void DoubleLinkedList::addNote() {
 	int nim;
 	string nm;
 	cout << "\Enter the roll number of the student: ";
@@ -39,4 +39,10 @@ void DoubleLinkedList::addNode() {
 	Node* newNode = new Node();
 	newNode->noMhs = nim;
 	newNode->name = nm;
-};
+
+	if (START == NULL || nim <= START->noMhs) {
+		if (START != NULL && nim == START->noMhs) {
+			cout << "\nDuplicate number not allowed" << endl;
+			return;
+		}
+		
