@@ -23,5 +23,20 @@ public:
 		void revtraverse();
 		void hapus();
 		void searchData();
+};
+
+	DoubleLinkedList::DoubleLinkedList() {
+		START = NULL;
 	}
+
+void DoubleLinkedList::addNode() {
+	int nim;
+	string nm;
+	cout << "\Enter the roll number of the student: ";
+	cin >> nim;
+	cout << "\nEnter the name of the student: ";
+	cin >> nm;
+	Node* newNode = new Node();
+	newNode->noMhs = nim;
+	newNode->name = nm;
 };
